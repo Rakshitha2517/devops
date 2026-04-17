@@ -13,7 +13,7 @@ jobs:
       - name: get pem file
         run: |
           echo "${{secrets.rakshi_key}}" > docker.pem
-          chmod 400 devops-r.pem
+          chmod 400 docker.pem
           ls -lrsth
       - name: cp app.py
         run: scp -o StrictHostKeyChecking=no -i docker.pem app.py ec2-user@3.111.171.19:/home/ec2-user/
